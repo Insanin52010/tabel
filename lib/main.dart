@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'dart:html' as html;
+import 'package:url_launcher/url_launcher.dart';
 
 void main() {
   runApp(const MyApp());
@@ -49,7 +49,7 @@ class MyApp extends StatelessWidget {
                 ]),
                 TableRow(children: [
                   cell('2'),
-                  cell('Insanin Kamilia An Nisaa'),
+                  cell('Insanin Kamilia'),
                   cell('XI PPLG 2'),
                   link('GitHub Insanin',
                       'https://github.com/Insanin52010/sumber_umbulan'),
@@ -90,8 +90,12 @@ class MyApp extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(10),
       child: InkWell(
-        onTap: () {
-          html.window.open(url, '_blank');
+        onTap: () async {
+          final Uri uri = Uri.parse(url);
+          await launchUrl(
+            uri,
+            mode: LaunchMode.externalApplication,
+          );
         },
         child: Text(
           text,
