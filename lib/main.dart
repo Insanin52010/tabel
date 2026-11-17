@@ -49,7 +49,7 @@ class MyApp extends StatelessWidget {
                 ]),
                 TableRow(children: [
                   cell('2'),
-                  cell('Insanin Kamilia'),
+                  cell('Insanin Kamilia An Nisaa'),
                   cell('XI PPLG 2'),
                   link('GitHub Insanin',
                       'https://github.com/Insanin52010/sumber_umbulan'),
